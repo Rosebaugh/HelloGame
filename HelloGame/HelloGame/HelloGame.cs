@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
-using System.Numerics;
 
 namespace HelloGame
 {
@@ -35,7 +34,7 @@ namespace HelloGame
                 (float)random.NextDouble(),
                 (float)random.NextDouble()
                 );
-            ballVelocity.Normalize;
+            ballVelocity.Normalize();
             ballVelocity *= 100;
 
             base.Initialize();
@@ -46,7 +45,7 @@ namespace HelloGame
             _spriteBatch = new SpriteBatch(GraphicsDevice);
 
             // TODO: use this.Content to load your game content here
-            BallTexture = Content.Load<Texture2D>("ball");
+            ballTexture = Content.Load<Texture2D>("ball");
         }
 
         protected override void Update(GameTime gameTime)
@@ -55,13 +54,13 @@ namespace HelloGame
                 Exit();
 
             // TODO: Add your update logic here
-            ballPosition += (float)ballVelocity * gameTime.ElapsedGameTime.TotalSeconds;
+            ballPosition += (float)gameTime.ElapsedGameTime.TotalSeconds * ballVelocity;
 
-            if (ballPosition.X < GraphicsDevice.Viewport.X || ballPosition > GraphicsDevice.Viewport.Width - 64)
+            if (ballPosition.X < GraphicsDevice.Viewport.X || ballPosition.X > GraphicsDevice.Viewport.Width - 64)
             {
                 ballVelocity.X *= -1;
             }
-            if (ballPosition.Y < GraphicsDevice.Viewport.Y || ballPosition > GraphicsDevice.Viewport.Height - 64)
+            if (ballPosition.Y < GraphicsDevice.Viewport.Y || ballPosition.Y > GraphicsDevice.Viewport.Height - 64)
             {
                 ballVelocity.Y *= -1;
             }
@@ -75,6 +74,8 @@ namespace HelloGame
             // TODO: Add your drawing code here
             _spriteBatch.Begin();
             _spriteBatch.Draw(ballTexture, ballPosition, Color.White);
+            _spriteBatch.End();
+
             base.Draw(gameTime);
         }
     }

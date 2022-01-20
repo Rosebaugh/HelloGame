@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/cpros/OneDrive/Documents/School Work/CS 580/HelloGame/HelloGame/Content/Ball.png</SourceFile>
-  <SourceTime>2022-01-19T23:42:43-06:00</SourceTime>
+  <SourceTime>2022-01-20T00:14:27-06:00</SourceTime>
   <DestFile>C:/Users/cpros/OneDrive/Documents/School Work/CS 580/HelloGame/HelloGame/Content/bin/Windows/Content/Ball.xnb</DestFile>
-  <DestTime>2022-01-19T23:51:34.0844383-06:00</DestTime>
+  <DestTime>2022-01-20T00:20:38.369918-06:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>
